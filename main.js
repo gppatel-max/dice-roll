@@ -3,7 +3,10 @@ let roll = document.querySelector("#roll-button");
 let showbutton = document.querySelector("#show-all-rolls");
 let numberofdicebox = document.querySelector("#how-many-dice")
 let totalnumber  = document.querySelector("total-number")
-let resultscontainer = document.querySelector("results-container")
+let allroll = document.querySelector("#ALL-ROLL")
+let totaldiv = document.querySelector("#total")
+let resetbutton = document.querySelector("#reset-button")
+let total = 0
 roll.addEventListener("click",function(){
 
   console.log("rollbutton clicked")
@@ -29,20 +32,20 @@ while (counter < howmanytimeyouwantmetoroll) {
     return a + b;
 }, 0);
 console.log(sum)
-
-while (counter < dieRollsArray.length)
-totalnumber.innerHTML +=dieRollsArray[counter]
-counter = counter +1
-
-
+totaldiv.innerHTML = sum
 
 })
 
 showbutton.addEventListener("click",function(){
   let counter = 0
   
-  while (counter < dieRollsArray.length)
-resultscontainer.innerHTML +=dieRollsArray[counter]
+  while (counter < dieRollsArray.length){
+allroll.innerHTML += "<li>"+ dieRollsArray [counter] + "</li>"
 counter = counter +1
+  }
 
+})
+resetbutton.addEventListener("click" ,function(){
+  let counter = 0
+ 
 })
